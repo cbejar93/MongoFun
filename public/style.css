@@ -1,0 +1,17 @@
+.navbar {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+}
+
+.jumbotron {
+    background-image: url("./images/newsPaper.jpg")
+}
+
+#nyt {
+    color: black;
+    font-weight: bold;
+}
+
