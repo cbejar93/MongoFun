@@ -17,7 +17,7 @@ $("#scrape").on("click", function(){
 $("#database").on("click", function(){
     $.ajax({
         dataType: 'json',
-        url: `http://localhost:8080/find`,
+        url: "http://localhost:8080/find",
         success: function(err){
             if (err) throw err;
         }

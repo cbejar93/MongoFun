@@ -4,7 +4,7 @@ const db = require('../models');
 const mongoose = require("mongoose");
 const router = express.Router();
 const app = express();
-const PopData = require("../controllers/fetch");
+const popData = require("../controllers/fetch");
 const getData = require("../controllers/retrive");
 const getUno = require ("../controllers/findone");
 var writeNote = require ("../controllers/notefetch");
@@ -12,6 +12,7 @@ var path = require("path");
 
 
 router.get('/find', function (req, res){
+    console.log("popdata Route")
     popData();
 })
 

@@ -14,7 +14,7 @@ scrape()
     for(i=0; i<results.length; i++){
         db.Article.create(results[i])
          .then(function(dbArticle) {
-        //   console.log(dbArticle);
+          console.log(dbArticle);
     }).catch(function(err) {
         return res.json(err);
       });
