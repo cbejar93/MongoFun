@@ -20,10 +20,6 @@ app.use(logger("dev"));
 
 mongoose.connect("mongodb://localhost/news_db");
 
-// app.get("/", function(req, res) {
-//     res.sendFile(path.join(__dirname, "./public/index.html"));
-//   });
-
 var routes = require("./routes/mongoAPI");
 app.use(routes);
 
