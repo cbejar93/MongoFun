@@ -14,14 +14,17 @@ $("#scrape").on("click", function(){
           });
 })
 
-
-$(".article-btn").on("click", function(){
-    
-   console.log("inside 2nd on click")
-    id = $(this).attr("value");
-    
-})
-
-$("#note").on("click", function(){
+$(document).on("click", ".article-btn", function (){
+    console.log("indside 2nd on-click");
+    var id = $(this).attr("value");
     console.log(id);
+    $.ajax({
+        dataType: "json",
+        url: `http://localhost:8080/articles/${id}`,
+        success: function(data){
+            console.log(data);
+            console.log("in the 2nd AJAX");
+        }
+    })
+
 })
