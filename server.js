@@ -18,7 +18,12 @@ app.use(bodyParser.urlencoded({
 var db = require("./models");
 app.use(logger("dev"));
 
-mongoose.connect("mongodb://localhost/news_db");
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/news_db";
+
+// Set mongoose to leverage built in JavaScript ES6 Promises
+// Connect to the Mongo DB
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
 
 var routes = require("./routes/mongoAPI");
 app.use(routes);
