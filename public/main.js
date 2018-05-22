@@ -3,7 +3,7 @@ $("#scrape").on("click", function(){
         console.log("hello")
         $.ajax({
             dataType: "json",
-            url: "http://localhost:8080/articles",
+            url: "/articles",
             success: function(data){
                 // console.log(data);
                 for (var i = 0; i < data.length; i++) {
@@ -17,7 +17,7 @@ $("#scrape").on("click", function(){
 $("#database").on("click", function(){
     $.ajax({
         dataType: 'json',
-        url: "http://localhost:8080/find",
+        url: "/find",
         success: function(err){
             if (err) throw err;
         }
@@ -37,7 +37,7 @@ $(document).on("click", ".article-btn", function (){
             $.ajax({
                 type: 'POST',
                 data: comment,
-                url: `http://localhost:8080/articles/${id}`,
+                url: `/articles/${id}`,
                 success: console.log("You have made it!")
             })
     })
